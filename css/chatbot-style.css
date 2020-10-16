@@ -1,0 +1,178 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+p {
+    text-align: left;
+}
+.chat-btn {
+    display: inline-block;
+
+    transition: background .3s;
+    bottom: 50px;
+
+    right: 40px;
+    position: fixed;
+
+
+    z-index: 105000;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .chat-btn {
+        display: inline-block;
+
+        transition: background .3s;
+
+        position: fixed;
+        bottom: 20px;
+        right: 10px;
+
+        z-index: 105000;
+    }
+
+}
+
+
+.chat-btn i:hover{
+    color: red;
+}
+.popup {
+    position: fixed;
+    padding: 10px;
+    max-width: 500px;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(255,255,255,.9);
+    visibility: hidden;
+    opacity: 0;
+    /* "delay" the visibility transition */
+    -webkit-transition: opacity .5s, visibility 0s linear .5s;
+    transition: opacity .5s, visibility 0s linear .5s;
+    z-index: 105010;
+}
+.popup:target {
+    visibility: visible;
+    opacity: 1;
+    /* cancel visibility transition delay */
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+.popup-close {
+    position: absolute;
+    padding: 10px;
+    max-width: 500px;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(255,255,255,.9);
+}
+.popup .logo{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    padding: 10px;
+}
+.popup .hide{
+    position: absolute;
+    background-color: white;
+    width: 94%;
+    height: 30px;
+    top: 90px;
+}
+iframe{
+    overflow-y: hidden;
+}
+.popup .close {
+    position: absolute;
+    right: 7px;
+    top: 11px;
+    padding: 10px;
+    color: white;
+    transition: color .3s;
+    font-size: 2.5em;
+    line-height: .6em;
+    font-weight: bold;
+}
+.popup .close:hover {
+    color: red;
+}
+
+.close-popup {
+    background: rgba(0,0,0,.7);
+    cursor: default;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 104900;
+    /* "delay" the visibility transition */
+    -webkit-transition: opacity .5s, visibility 0s linear .5s;
+    transition: opacity .5s, visibility 0s linear .5s;
+}
+.popup:target + .close-popup{
+    opacity: 1;
+    visibility: visible;
+    /* cancel visibility transition delay */
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+/*#fourth {
+    animation: shake 0.7s 1.5s;
+}*/
+/*#fourth img{
+    animation: shakeonload 0.7 1.5s;
+}*/
+
+#fourth img:hover{
+    animation: shake 1.0 1.5s;
+}
+@keyframes shake {
+    0% {
+        transform: translate(0, 0);
+    }
+    10% {
+        transform: translate(2px, 2px);
+    }
+    20% {
+        transform: translate(-2px, -2px);
+    }
+    30% {
+        transform: translate(3px, 3px);
+    }
+    40% {
+        transform: translate(-3px, -3px);
+    }
+    50% {
+        transform: translate(4px, 4px);
+    }
+    60% {
+        transform: translate(-4px, -4px);
+    }
+    70% {
+        transform: translate(5px, 5px);
+    }
+    80% {
+        transform: translate(-5px, -5px);
+    }
+    90% {
+        transform: translate(6px, 6px);
+    }
+    100% {
+        transform: translate(-6px, -6px);
+    }
+}

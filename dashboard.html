@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TrackYourMoney - Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/loading.css">
+    <link rel="stylesheet" href="css/chatbot-style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet"> 
+
+    <!-- favicon logo  -->
+    <link rel="shortcut icon" type="image/png" href="images/nav-logo.png">
+    <!-- <link rel="shortcut icon" type="image/gif" href="images/money.gif"> -->
+</head>
+<body onload="loadingPage()">
+
+    <!-- ------------------------------------------for loading page ------------------------------------------- -->
+    <div class="body" id="loading">
+
+        <div class="loader">
+            <span class="span"></span>
+            <span class="span"></span>
+            <span class="span"></span>
+            <span class="span"></span>
+            <span class="span"></span>
+        </div>
+
+    </div>
+
+    
+
+    <!-- --------------------------------------------------navbar ------------------------------------------------- -->
+    <nav class="navbar navbar-expand-sm navbar-colour d-flex justify-content-between align-items-center">
+        <a class="navbar-brand d-flex align-items-center" href="dashboard.html">
+            <img src="images/nav-logo.png" width="40" height="40" style="border-radius:5px;" class="d-inline-block align-top logo" alt="">
+            <!-- <img src="images/money.gif" width="40" height="40" style="border-radius:5px;" class="d-inline-block align-top logo" alt=""> -->
+            <span class="navbar-brand mb-0 h1 text-muted navbar-font">TrackYourMoney</span>
+        </a>
+
+        <div class="d-flex align-items-center">
+            <img src="images/user.png" id="nav_image" class="rounded-circle" role="button" data-toggle="modal" data-target="#ResponsiveProfileModal">
+            <a href="#" id="logout"><i class="fas fa-power-off fa-2x orange"></i></a>
+        </div>
+
+
+    </nav>
+
+    <!-- chatbot integration-->
+    <a href="#popup1" class="chat-btn" id="fourth"><img src="images/help.png" style="height: 70px;width:70px;"></a>
+    <div id="popup1" class="popup">
+        <img src="images/help.png" style="height: 80px;width:80px;" class="logo">
+        <a href="#" class="close" style="text-decoration: none">&times;</a>
+        <div class="hide"></div>
+
+
+        <iframe
+                allow="microphone;"
+                width="350"
+                height="430"
+
+                src="https://console.dialogflow.com/api-client/demo/embedded/1dfeff27-e056-422f-befb-95666d7e98ed">
+        </iframe>
+    </div>
+    <a href="#" class="close-popup"></a>
+    
+    <!-- chatbot code end   -->
+
+
+
+    <div id="alert">
+
+
+    </div>
+
+    <div class="container">
+
+
+        <div class="row d-flex align-items-center">
+
+
+            <div class="col-md-4 mt-4 col-lg-4" id="ResponsiveHideMobile">
+                <div class="card">
+                    <img src="images/user.png" id="user_image"class="card-img-top" style="padding: 5px;" alt="...">
+                    <div class="card-body" style="padding-top: 5px; padding-bottom: 10px;">
+                      <h5 class="card-title font-table-items" style="font-size: 2rem; margin-bottom: 0px;"><strong id="user_name"></strong></h5>
+                      <p class="card-text"><strong>Occupation: </strong><span id="Updatedoccupation">Please Edit Profile</span></p>
+                      <p class="card-text"><strong>DOB: </strong><span id="UpdatedDOB">Please Edit Profile</span></p>
+                      <p class="card-text"><strong>Address: </strong><span id="UpdatedAddress">Please Edit Profile</span></p>
+                      <a href="#" class="btn btn-lg btn-block btn-dark font-small-cards edit" data-toggle="modal" data-target="#profileModal">Edit Profile</a>
+                    </div>
+                 </div>
+
+            </div>
+
+            <div class="col-md-8 col-lg-8 col-sm-12">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-4 col-6">
+                        <div class="card bg-warning text-white mt-4" id="total-earnings">
+                            <div class="card-body height-fixed">
+                                <h3 class="font-top-cards">Total Earnings: </h3>
+                                <h1 class="font-top-num">Rs. <span id="totalEarning">0</span></h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12 col-sm-4 col-6">
+                        <div class="card bg-danger text-white mt-26" id="total-expense">
+                            <div class="card-body height-fixed">
+                                <h3 class="font-top-cards">Total Expenses: </h3>
+                                <h1 class="font-top-num">Rs. <span id="totalExpense">0</span></h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12 col-sm-4 col-6">
+                        <div class="card bg-success text-white mt-26" id="total-savings">
+                            <div class="card-body height-fixed">
+                                <h3 class="font-top-cards">Total Savings: </h3>
+                                <h1 class="font-top-num">Rs. <span id="totalSavings">0</span></h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hide only part  -->
+                    <div class="col-md-4 col-lg-4 col-sm-4 col-6" id="ResponsileHide">
+                        <div class="card bg-success text-white mt-26 total_transaction_them ">
+                            <div class="card-body height-fixed">
+                                <h3 class="font-top-cards text-768">Total Transactions: </h3>
+                                <h1 class="font-top-num text-768" id="totalTransactionsHide">0</h1>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="col-md-4 col-lg-4 col-sm-4 col-6" id="ResponseShow">
+                <div class="card bg-success text-white mt-26 total_transaction_them ">
+                    <div class="card-body height-fixed">
+                        <h3 class="font-top-cards text-768">Total Transactions: </h3>
+                        <h1 class="font-top-num text-768" id="totalTransactions">0</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-4 col-6">
+                <div class="card bg-success text-white mt-26 mt-4 current-month-credit-theme">
+                    <div class="card-body height-fixed">
+                        <h3 class="font-top-cards text-768">Current Month Credit: </h3>
+                        <h1 class="font-top-num text-768" >Rs. <span id="currentMonthCredit">0</span></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-4 col-6">
+                <div class="card bg-success text-white mt-26 mt-4 current-month-debit-theme">
+                    <div class="card-body height-fixed">
+                        <h3 class="font-top-cards text-768">Current Month Debit: </h3>
+                        <h1 class="font-top-num text-768">Rs. <span id="currentMonthDebit">0</span></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4 ResponsiveMoreDetailsShowPC">
+
+            <div class="col-md-4 col-lg-4 ResponsiveMoreDetailsShowPC">
+                <h3 class="font-david">Your Transactions</h3>
+            </div>
+
+            <div class="col-md-4 col-lg-4 d-flex justify-content-center align-items-center">
+                <div class="ResponsiveMoreDetailsShowPC">
+                    <button type="button" class="btn btn-danger red-black" data-toggle="modal" data-target="#exampleModal" id="addExpenseButton">
+                        Add Transactions&nbsp;<i class="fas fa-plus-circle"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-4 d-flex align-items-center flex-row-reverse ">
+                <div class="ResponsiveMoreDetailsShowPC">
+                    <a href="analysis.html" class="btn btn-danger edit more-details-theme" type="button" id="MoreExpenseButton">More Details&nbsp;<i class="fas fa-angle-double-right"></i></a>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        <div class="row mt-4" id="transactionDetailsRow">
+
+            <div class="col-sm-12 d-flex align-items-center justify-content-center">
+                <div class="">
+                    <button type="button" class="btn btn-danger red-black" data-toggle="modal" data-target="#exampleModal" id="addExpenseButton">
+                        Add Transactions&nbsp;<i class="fas fa-plus-circle"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-sm-12 d-flex align-items-center justify-content-center mt-3">
+                <h3 class="font-david">Your Transactions</h3>
+            </div>
+
+        </div>
+
+        
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-12 mt-3 table_part">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr class="font-small-cards" style="font-size: 18px;">
+                            <th scope="col">S. No.</th>
+                            <th scope="col">Expense Name</th>
+                            <th scope="col">Expense Type</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">Transaction Type</th>
+                        </tr>
+                    </thead>
+                    <tbody id="last10TransShow">
+
+                    </tbody>
+
+                    <tbody id="July_DecemTransactionShow">
+
+                    </tbody>
+
+                    <tbody id="allTransactionShow">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- for responsive--- "More Button" only show in mobile view  -->
+    <div class="container" id="ResponsiveMoreDetailsHidePC">
+        <div class="row">
+            <div class="col-md-12 d-flex align-items-center justify-content-center">
+                    <div class="">
+                        <a href="analysis.html" class="btn btn-danger edit" id="ResponsiveMoreDetailsHidePCButon" type="button" style="border-radius: 20px; margin: 20px">More Details&nbsp;<i class="fas fa-angle-double-right"></i></a>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+<!-- Add Expense Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content br-none">
+                <div class="modal-header add text-white">
+                    <h5 class="modal-title font-small-cards" id="exampleModalLabel">Add Your Expense</h5>
+                    <button type="button" class="close text-white close-btn" style="padding-top: 16px; padding-bottom: 19px; padding-left: 20px; padding-right: 20px;" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body bg-grey font-table-items">
+
+                    <div id="addExpenseModalAlert">
+
+                    </div>
+                    <form>
+                        <label class="font-18">Expense Name: </label>
+                        <input type="text" class="form-control mb-14" id="expenseName" required>
+
+                        <label class="font-18">Expense Type: </label>
+                        <select name="expenseType" class="form-control mb-14" id="expenseCategory" required>
+                            <option value="" selected disabled hidden>Choose Type</option>
+                            <option value="Grocery">Grocery</option>
+                            <option value="Gas">Gas</option>
+                            <option value="Mileage">Mileage</option>
+                            <option value="Repairs">Repairs</option>
+                            <option value="Vehicle Insurance">Vehicle Insurance</option>
+                            <option value="Vehicle Licensing">Vehicle Licensing</option>
+                            <option value="Contractors">Contractors</option>
+                            <option value="Education and Training">Education and Training</option>
+                            <option value="Accident Insurance">Accident Insurance</option>
+                            <option value="Health Insurance">Health Insurance</option>
+                            <option value="Life Insurance">Life Insurance</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Restaurants/Dining">Restaurants/Dining</option>
+                            <option value="Hardware">Hardware</option>
+                            <option value="Office Supplies">Office Supplies</option>
+                            <option value="Packaging">Packaging</option>
+                            <option value="Postage">Postage</option>
+                            <option value="Printing">Printing</option>
+                            <option value="Shipping & Couriers">Shipping & Couriers</option>
+                            <option value="Software">Software</option>
+                            <option value="Stationery">Stationery</option>
+                            <option value="Bank Fees">Bank Fees</option>
+                            <option value="Business Insurance">Business Insurance</option>
+                            <option value="Commissions">Commissions</option>
+                            <option value="Depreciation<">Depreciation</option>
+                            <option value="Interest - Mortgage">Interest - Mortgage</option>
+                            <option value="Interest - Other">Interest - Other</option>
+                            <option value="Online Services">Online Services</option>
+                            <option value="Reference Materials">Reference Materials</option>
+                            <option value="Repairs & Maintenance">Repairs & Maintenance</option>
+                            <option value="Subscriptions/Dues/Memberships">Subscriptions/Dues/Memberships</option>
+                            <option value="Taxes & Licenses">Taxes & Licenses</option>
+                            <option value="Wages">Wages</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Accounting">Accounting</option>
+                            <option value="Legal Fees">Legal Fees</option>
+                            <option value="Equipment">Equipment</option>
+                            <option value="Machinery">Machinery</option>
+                            <option value="Office Space">Office Space</option>
+                            <option value="Supplies">Supplies</option>
+                            <option value="Airfare">Airfare</option>
+                            <option value="Hotel/Lodging/Accommodation">Hotel/Lodging/Accommodation</option>
+                            <option value="Taxi & Parking">Taxi & Parking</option>
+                            <option value="Gas & Electrical">Gas & Electrical</option>
+                            <option value="Phone">Phone</option>
+                        </select>
+
+                        <label class="font-18">Amount: </label>
+                        <input type="number" class="form-control mb-14" id="expenseAmount" required >
+
+                        <label class="font-18">Date: </label>
+                        <input type="date" class="form-control mb-14" id="expenseDate" required>
+
+                        <label class="font-18">Time</label>
+                        <input type="time" class="form-control mb-14" id="expenseTime"  required>
+
+                        <label class="font-18">Transaction Type</label>
+                        <select name="transactionType" class="form-control mb-20" id="expenseType" required>
+                            <option value="" selected disabled hidden>Choose Transaction Type</option>
+                            <option value="debit">Debit</option>
+                            <option value="credit">Credit</option>
+                        </select>
+                    </form>
+
+                    <button class="btn btn-lg btn-block btn-danger add br-none" id="addExpenseButtonFetch">Add&nbsp; Expense</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+<!--- Edit Profile Modal-->
+    <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content br-none">
+                <div class="modal-header edit">
+                    <h5 class="modal-title font-small-cards text-white" id="profileModalLabel">Edit Your Profile: </h5>
+                    <button type="button" class="close close-btn text-white" style="padding-top: 16px; padding-bottom: 19px; padding-left: 20px; padding-right: 20px;" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body bg-grey font-table-items">
+                    <form>
+                        <label class="font-18">Your User Name: </label>
+                        <input id="edit-name" type="text" class="form-control mb-20">
+
+                        <label for="" class="font-18">Ocupation: </label>
+                        <select name="transactionType" class="form-control mb-14" id="occupationOptions">
+                            <option value="" selected disabled hidden>Choose One</option> 
+                            <option value="Agriculture, Food and Natural Resources">Agriculture, Food and Natural Resources</option>
+                            <option value="Arts, Audio/Video Technology and Communications">Arts, Audio/Video Technology and Communications</option>
+                            <option value="Education and Training">Education and Training</option>
+                            <option value="Government and Public Administration">Government and Public Administration</option>
+                            <option value="Hospitality and Tourism">Hospitality and Tourism</option>
+                            <option value="Information Technology">Information Technology</option>
+                            <option value="Manufacturing">Manufacturing</option>
+                            <option value="Science, Technology, Engineering and Mathematics">Science, Technology, Engineering and Mathematics</option>
+                            <option value="Architecture and Construction">Architecture and Construction</option>
+                            <option value="Business Management and Administration">Business Management and Administration</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Health Science">Health Science</option>
+                            <option value="Human Services">Human Services</option>
+                            <option value="Law, Public Safety, Corrections and Security">Law, Public Safety, Corrections and Security</option>
+                            <option value="Marketing, Sales and Service">Marketing, Sales and Service</option>
+                            <option value="Transportation, Distribution and Logistics">Transportation, Distribution and Logistics</option>
+                            <option value="Other">Other</option>
+                        </select>
+
+                        <label for="" class="font-18">Date of Birth:</label>
+                        <input type="date" class="form-control mb-14" id="DOB">
+
+                        <label for="">Address: </label>
+                        <input type="text" class="form-control mb-14" id="address">
+
+                        <label class="font-18 orange">Profile Picture: <small>*only .png/.jpg/.jpeg files</small></label>
+                        <input type="file" accept=".png, .jpg, .jpeg" class="form-control mb-20" style="padding-top: 6px;" onchange="chooseFile(event)" id="profile-image">
+
+                    </form>
+                    <button class="btn btn-danger btn-block btn-lg edit br-none" id="edit_profile_submit">Submit&nbsp; Details</button>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    
+    
+    <!--Profile Responsive Modal -->
+    <div class="modal fade" id="ResponsiveProfileModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Profile</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+
+            <div class="container">
+                <div class="row d-flex align-items-center">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <b class="text-muted">Name: </b><span id="ResponsiveProfileName"> Edit Profile</span> 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <b class="text-muted">Occupation: </b><span id="ResponsiveProfileOccupation"> Edit Profile</span> 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <b class="text-muted">DOB: </b> <span id="ResponsiveProfileDOB"> Edit Profile</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <b class="text-muted">Address: </b> <span id="ResponsiveProfileAddress"> Edit Profile</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 d-flex align-items-center justify-content-center" id="ResponsiveImagePart">
+                        <img src="images/user.png" alt="" id="ResponsiveImage">
+                    </div>
+                </div>
+            </div>
+
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary editResponsive" data-toggle="modal" data-target="#profileModal">Edit Profile</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase.js"></script>
+
+
+    <script src="js/firebase-credentials.js"></script>
+    <script src="js/dashboard.js"></script>
+
+
+    <script>
+
+        if(screen.width >= 768) {
+            let id1 = document.querySelector('#total-earnings').children;
+            let id2 = document.querySelector('#total-expense').children;
+            let id3 = document.querySelector('#total-savings').children;
+
+            // id.removeClass('height-fixed');
+            $(id1).removeClass('height-fixed');
+            $(id2).removeClass('height-fixed');
+            $(id3).removeClass('height-fixed');
+        }
+    </script>
+
+
+
+
+    <script>
+        let preloader = document.querySelector('#loading');
+    
+        function loadingPage() {
+            preloader.style.display = 'none';
+        };
+    
+    </script>
+</body>
+</html>

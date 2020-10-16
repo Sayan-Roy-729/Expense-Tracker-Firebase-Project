@@ -1,0 +1,496 @@
+*{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+	background-color: #F2F2F2;
+}
+.navbar-colour{
+    background: #7F7FD5;
+    background: -webkit-linear-gradient(to left, #2980b9, #86A8E7, #91EAE4);
+    background: linear-gradient(to left, #2980b9, #86A8E7, #91EAE4);
+}
+nav img{
+    margin: 5px;
+}
+
+#nav_image {
+	height: 45px;
+	width: 45px;
+	margin-right: 10px;
+}
+.font-18{
+    font-size: 18px;
+}
+#total-earnings{
+	background: #c21500;
+	background: -webkit-linear-gradient(to right, #ffc500, #c21500);
+	background: linear-gradient(to right, #ffc500, #c21500);
+}
+#total-expense{
+	background: #C33764;
+	background: -webkit-linear-gradient(to left, #1D2671, #C33764);
+	background: linear-gradient(to left, #1D2671, #C33764);
+}
+#total-savings{
+	background: #44A08D;
+	background: -webkit-linear-gradient(to left, #093637, #44A08D);
+	background: linear-gradient(to left, #093637, #44A08D);
+}
+.add{
+	background: #870000;
+	background: -webkit-linear-gradient(to right, #190A05, #870000);
+	background: linear-gradient(to right, #190A05, #870000);
+}
+.debit{
+	background: #00d2ff;
+	background: -webkit-linear-gradient(to right, #3a7bd5, #00d2ff);
+	background: linear-gradient(to right, #3a7bd5, #00d2ff);
+}
+
+.total_transaction_them {
+	background: #ee0979;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #ff6a00, #ee0979);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #ff6a00, #ee0979); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.current-month-credit-theme{
+	background: #fc00ff;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #00dbde, #fc00ff);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #00dbde, #fc00ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.current-month-debit-theme{
+	background: #00c6ff;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	
+}
+.credit{
+	background: #666600;
+	background: -webkit-linear-gradient(to left, #999966, #666600);
+	background: linear-gradient(to left, #999966, #666600);
+}
+.edit{
+
+	background: #FC466B;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #3F5EFB, #FC466B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.more-details-theme{
+	background: #833ab4;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.bg-grey{
+	background-color: #F2F2F2;
+}
+.bg-red{
+	background-color: #E11D0D;
+}
+.red-black{
+	background: #ED213A;
+	background: -webkit-linear-gradient(to left, #93291E, #ED213A);
+	background: linear-gradient(to left, #93291E, #ED213A);
+}
+.red{
+	color: #EE0000;
+}
+.orange{
+	color: #FF5733;
+}
+.green{
+	background-color: #4ACF0A;
+}
+.green-shade{
+	color: #7b920a;
+}
+.bg-green-shade{
+	background-color: #7b920a;
+}
+.font-david{
+	font-size: 30px;
+}
+.font-table-items{
+	font-size: 20px;
+}
+.font-top-cards{
+	font-size: 2.4vw;
+}
+.font-top-num{
+	font-size: 2.4vw;
+	float: right;
+}
+.font-small-cards{
+	font-size: 24px;
+}
+.welcome-user{
+	font-size: 32px;
+}
+.table {
+	max-height: 70vh;
+	overflow-y: scroll;
+}
+.close-btn{
+	padding-top: 16px;
+	padding-bottom: 19px;
+	padding-left: 20px;
+	padding-right: 20px;
+	opacity: 0.9;
+	font-size: 2rem;
+}
+.mb-14{
+	margin-bottom: 14px;
+}
+.mb-20{
+	margin-bottom: 20px;
+}
+.br-none{
+	border: none;
+}
+.mt-26{
+	margin-top: 26px;
+}
+#tableShow{
+	max-height: 70vh;
+	overflow-y: scroll;
+}
+#user_image {
+	max-height: 27vh;
+}
+
+#profileModal {
+	z-index: 10100;
+}
+#ResponsiveProfileModal {
+	z-index: 9999;
+}
+
+#ResponsiveImagePart > img {
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+}
+
+
+#addExpenseButton{
+	border-radius: 50px; 
+	width: 220px; 
+	height: 50px;
+	font-size: 20px;
+}
+
+
+#MoreExpenseButton{
+	border-radius: 25px;
+	font-size: 18px;
+}
+
+
+.editResponsive{
+	background: #FC466B;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #3F5EFB, #FC466B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+/* media quaries ----------------> */
+
+@media (min-width: 1201px){
+
+	#ResponsileHide{
+		display: none;
+	}
+
+	#transactionDetailsRow{
+		display: none;
+	}
+
+	#ResponsiveMoreDetailsHidePC{
+		display: none;
+	}
+}
+
+
+@media (max-width:1200px) {
+
+	/* profile card  */
+	#user_name {
+		font-size: 2.1vw;
+	}
+
+	.edit{
+		font-size: 2vw;
+	}
+
+	.card-text {
+		font-size: 1.3vw;
+	}
+
+	#ResponsileHide{
+		display: none;
+	}
+
+	#transactionDetailsRow{
+		display: none;
+	}
+
+	#ResponsiveMoreDetailsHidePC{
+		display: none;
+	}
+
+	.height-fixed{
+		min-height: 152px;
+	}
+}
+
+
+@media (max-width:992px) {
+
+	/* Widgets */
+	.font-top-cards{
+		font-size: 2.74vw;
+	}
+	.font-top-num{
+		font-size: 2.74vw;
+		float: right;
+	}
+
+
+	/* profile card  */
+	#user_name {
+		font-size: 2.7vw;
+	}
+
+	.edit{
+		font-size: 2.3vw;
+	}
+
+	.card-text{
+		font-size: 13px;
+	}
+
+	#ResponsileHide{
+		display: none;
+	}
+
+
+	.font-david{
+		font-size: 25px;
+	}
+
+	#addExpenseButton{
+		font-size: 15px;
+		width: 180px;
+		height: 45px;
+	}
+
+	#MoreExpenseButton{
+		font-size: 17px;
+	}
+
+	#transactionDetailsRow{
+		display: none;
+	}
+
+	#ResponsiveMoreDetailsHidePC{
+		display: none;
+	}
+
+}
+
+
+@media (max-width:768px){
+
+	/* profile card hide */
+	#ResponsiveHideMobile{
+		display: none;
+	}
+
+	.text-768{
+		font-size: 2.3vw;
+	}
+
+	#ResponsileHide{
+		display: none;
+	}
+
+	.font-david{
+		font-size:25px;
+	}
+
+	#addExpenseButton{
+		width: 45vw;
+	}
+
+	.ResponsiveMoreDetailsShowPC{
+		display: none;
+	}
+
+	#transactionDetailsRow{
+		display: block;
+	}
+
+	.font-small-cards th {
+		font-size: 13px;
+	}
+
+	.font-table-items{
+		font-size: 14px;
+	}
+
+	#ResponsiveMoreDetailsHidePC{
+		display: block;
+	}
+
+	#ResponsiveMoreDetailsHidePCButon{
+		width: 45vw;
+	}
+
+	.height-fixed{
+		min-height: 118px;
+	}
+
+
+	#ResponsiveImagePart > img {
+		width: 90%;
+		height: 250px;
+		border-radius: 10px;
+		margin-top: 14px;
+	}
+	
+}
+
+@media (max-width:576px){
+
+	#ResponseShow {
+		display: none;
+	}
+
+	#ResponsileHide{
+		display: block;
+	}
+
+	#addExpenseButton{
+		font-size: 12px;
+	}
+
+	.font-small-cards th {
+		font-size: 14px;
+	}
+
+	/* profile card hide */
+	#ResponsiveHideMobile{
+		display: none;
+	}
+
+
+	.font-top-cards{
+		font-size: 4.5vw;
+	}
+	.font-top-num{
+		font-size: 4.5vw;
+		float: right;
+	}
+
+	.font-table-items{
+		font-size: 14px;
+	}
+
+	.font-david{
+		font-size: 20px;
+	}
+
+	.table_part {
+		overflow-x: scroll;
+	}
+
+	#ResponsiveMoreDetailsHidePC{
+		display: block;
+	}
+	#ResponsiveMoreDetailsHidePCButon{
+		width: 45vw;
+		font-size: 14px;
+	}
+
+
+	#ResponsiveImagePart > img {
+		width: 90%;
+		height: 250px;
+		border-radius: 10px;
+		margin-top: 14px;
+	}
+}
+
+
+@media (max-width: 480px) {
+
+	/* navbar     */
+	.navbar-font {
+		font-size: 4vw;
+		color: white;
+	}
+
+	.logo {
+		width: 35px;
+		height: 35px;
+	}
+
+	#nav_image {
+		height: 40px;
+		width: 40px;
+	}
+
+
+	/* profile card hide */
+	#ResponsiveHideMobile{
+		display: none;
+	}
+
+
+	.font-top-cards{
+		font-size: 4.5vw;
+	}
+	.font-top-num{
+		font-size: 4.5vw;
+		float: right;
+	}
+
+	/* #ResponsileHide{
+		display: none;
+	} */
+
+	.table_part {
+		overflow-x: scroll;
+	}
+
+
+	.font-small-cards th {
+		font-size: 14px;
+	}
+
+	.font-table-items{
+		font-size: 14px;
+	}
+
+	.font-david{
+		font-size: 18px;
+	}
+
+	#ResponsiveMoreDetailsHidePCButon{
+		width: 45vw;
+		font-size: 12px;
+	}
+
+
+	#ResponsiveImagePart > img {
+		width: 90%;
+		height: 170px;
+		border-radius: 10px;
+		margin-top: 14px;
+	}
+}
+

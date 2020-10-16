@@ -1,0 +1,103 @@
+*{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+    background: #acb6e5;
+    background: -webkit-linear-gradient(to left, #86fde8, #acb6e5);
+    background: linear-gradient(to left, #86fde8, #acb6e5);
+}
+.navbar-colour{
+    background: #7F7FD5;
+    background: -webkit-linear-gradient(to left, #91EAE4, #86A8E7, #2980b9);
+    background: linear-gradient(to left, #91EAE4, #86A8E7, #2980b9);
+}
+
+.body-image{
+    width: 100%;
+    height: auto;
+}
+.navbar-font{
+    font-size: 25px;
+}
+nav img{
+    margin: 5px;
+}
+
+#passwordsetlink{
+    color: rgb(88, 88, 214);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#passwordsetlink:hover{
+    color: rgb(24, 24, 173);
+    cursor: pointer;
+}
+
+.btn-color{
+    background: #24C6DC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #514A9D, #24C6DC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #514A9D, #24C6DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.btn-color:hover{
+    color: white;
+    background-color: #175075;
+}
+.font-bold{
+    font-weight: bold;
+}
+#text-bgcolor{
+    background: #c31432;
+    background: -webkit-linear-gradient(to left, #240b36, #c31432);
+    background: linear-gradient(to left, #240b36, #c31432);
+
+    border-radius: 7px;
+}
+
+@media (min-width: 1201px){
+    .body-image{
+        width: 60%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .body-image{
+        width: 90%;
+    }
+}
+
+@media (max-width:992px){
+
+    .body-image{
+        width: 90%;
+    }
+
+    #intro{
+        font-size: 35px;
+    }
+}
+@media only screen and (max-width: 680px){
+
+    #intro{
+        font-size: 40px;
+    }
+
+    .navbar-font{
+        font-size: 22px;
+    }
+}
+
+@media (max-width:576px){ 
+    #intro{
+        font-size: 30px;
+    }
+
+    #introText{
+        font-size: 25px;
+    }
+
+    .navbar-font{
+        font-size: 18px;
+    }
+}
